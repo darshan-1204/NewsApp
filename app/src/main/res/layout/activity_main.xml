@@ -37,7 +37,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -45,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
+                    android:padding="7dp"
                     android:text="Sports"
                     android:id="@+id/sports"
                     android:textColor="#000"
@@ -58,7 +57,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -66,8 +64,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
                     android:text="Technology"
+                    android:padding="7dp"
                     android:id="@+id/technology"
                     android:textColor="#000"
                     android:textSize="20dp" />
@@ -79,15 +77,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
                     android:text="Business"
+                    android:padding="7dp"
                     android:id="@+id/business"
                     android:textColor="#000"
                     android:textSize="20dp" />
@@ -99,7 +96,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -107,8 +103,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
                     android:text="Health"
+                    android:padding="7dp"
                     android:id="@+id/health"
                     android:textColor="#000"
                     android:textSize="20dp" />
@@ -119,7 +115,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -127,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
+                    android:padding="7dp"
                     android:text="General"
                     android:id="@+id/general"
                     android:textColor="#000"
@@ -139,7 +134,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -147,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
+                    android:padding="7dp"
                     android:text="Science"
                     android:id="@+id/science"
                     android:textColor="#000"
@@ -159,7 +153,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
 
@@ -167,9 +160,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
                     android:text="Entertainment"
                     android:id="@+id/entertainment"
+                    android:padding="7dp"
                     android:textColor="#000"
                     android:textSize="20dp" />
 
