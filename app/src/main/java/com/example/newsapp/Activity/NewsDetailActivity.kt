@@ -1,6 +1,7 @@
 package com.example.newsapp.Activity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,14 +30,13 @@ class NewsDetailActivity : AppCompatActivity() {
 
         binding.btnUrl.setOnClickListener {
 
-
+            var intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse(url))
+            startActivity(intent)
         }
 
         Glide.with(this).load(img).into(binding.imgNd)
 
-        binding.back.setOnClickListener {
-            var intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 }

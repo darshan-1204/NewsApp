@@ -1,74 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#424242"
     tools:context=".Activity.NewsDetailActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="NewsApp"
+                    app:titleTextColor="#FFFF00"/>
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/back"
-                    android:src="@drawable/ic_arrow_back_"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="5dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY"
+                    android:src="@color/design_default_color_primary"
+                    android:id="@+id/imgNd"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#FFFF00"
+                    android:id="@+id/title"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:text="Minecraft Legends Review - IGN"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#fff"
+                    android:id="@+id/descNd"
+                    android:padding="5dp"
+                    android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"/>
+
+
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:id="@+id/btnUrl"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_margin="10dp"
+                    android:textColor="#424242"
+                    app:cornerRadius="10dp"
+                    android:backgroundTint="#FFFF00"
+                    android:text="Read Full News"/>
+
+
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="fitXY"
-                android:src="@color/design_default_color_primary"
-                android:id="@+id/imgNd"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="#000"
-                android:id="@+id/title"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:text="Minecraft Legends Review - IGN"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:textColor="#000"
-                android:id="@+id/descNd"
-                android:padding="5dp"
-                android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:id="@+id/btnUrl"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                app:cornerRadius="10dp"
-                android:backgroundTint="#E8E809"
-                android:text="Read Full News"/>
-
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 
 
-</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
