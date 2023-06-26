@@ -1,76 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="#424242"
+    android:orientation="vertical"
     tools:context=".Activity.NewsDetailActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="NewsApp"
+            app:titleTextColor="#FFFF00" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:title="NewsApp"
-                    app:titleTextColor="#FFFF00"/>
+        <ImageView
+            android:id="@+id/imgNd"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:src="@color/design_default_color_primary" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="fitXY"
-                    android:src="@color/design_default_color_primary"
-                    android:id="@+id/imgNd"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Minecraft Legends Review - IGN"
+            android:textColor="#FFFF00"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#FFFF00"
-                    android:id="@+id/title"
-                    android:textStyle="bold"
-                    android:layout_marginTop="5dp"
-                    android:padding="5dp"
-                    android:text="Minecraft Legends Review - IGN"/>
+        <TextView
+            android:id="@+id/descNd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"
+            android:textColor="#fff"
+            android:textSize="16dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:textColor="#fff"
-                    android:id="@+id/descNd"
-                    android:padding="5dp"
-                    android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:id="@+id/btnUrl"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
-                    android:layout_margin="10dp"
-                    android:textColor="#424242"
-                    app:cornerRadius="10dp"
-                    android:backgroundTint="#FFFF00"
-                    android:text="Read Full News"/>
-
-
-            </LinearLayout>
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFFF00"
+            android:text="Read Full News"
+            android:textColor="#424242"
+            app:cornerRadius="10dp" />
 
     </LinearLayout>
-
-
-
-
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

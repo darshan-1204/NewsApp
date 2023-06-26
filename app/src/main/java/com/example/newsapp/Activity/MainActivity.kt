@@ -18,12 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     private val TAG = "MainActivity"
-    var cat =
-        arrayOf("Sports", "Technology", "Business", "Health", "General", "Science", "Entertainment")
 
-    //        companion object{
-//        lateinit var data : ArrayList<ArticlesItem>
-//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,25 +26,26 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.sports.setOnClickListener {
-            loadSportNews()
+            loadNews("sport")
         }
         binding.technology.setOnClickListener {
-            loadTechNews()
+            loadNews("technology")
+
         }
         binding.business.setOnClickListener {
-            loadBusinessNews()
+            loadNews("business")
         }
         binding.health.setOnClickListener {
-            loadHealthNews()
+            loadNews("health")
         }
         binding.general.setOnClickListener {
-            loadGeneralNews()
+            loadNews("general")
         }
         binding.science.setOnClickListener {
-            loadScienceNews()
+            loadNews("science")
         }
         binding.entertainment.setOnClickListener {
-            loadEntertainmentNews()
+            loadNews("entertainment")
         }
 
         loadNews()
@@ -57,126 +53,6 @@ class MainActivity : AppCompatActivity() {
 
 
     fun loadNews() {
-
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "business", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-
-                    var data = response.body()
-
-//                Log.e(TAG, "onResponse: ========" + data )
-
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
-
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
-
-            })
-    }
-
-    fun loadSportNews() {
-
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "sport", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-
-                    var data = response.body()
-
-//                Log.e(TAG, "onResponse: ========" + data )
-
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
-
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
-
-            })
-    }
-
-    fun loadTechNews() {
-
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "technology", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-
-                    var data = response.body()
-
-//                Log.e(TAG, "onResponse: ========" + data )
-
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
-
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
-
-            })
-    }
-
-    fun loadBusinessNews() {
-
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "business", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-
-                    var data = response.body()
-
-//                Log.e(TAG, "onResponse: ========" + data )
-
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
-
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
-
-            })
-    }
-
-    fun loadHealthNews() {
-
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "health", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-
-                    var data = response.body()
-
-//                Log.e(TAG, "onResponse: ========" + data )
-
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
-
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
-
-            })
-    }
-
-    fun loadGeneralNews() {
 
         var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
         apiInterface.getData("in", "general", "a5a506de67624ea9b09b1ebea7e547b4")
@@ -200,10 +76,10 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    fun loadScienceNews() {
+    fun loadNews(text : String){
 
         var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "science", "a5a506de67624ea9b09b1ebea7e547b4")
+        apiInterface.getData("in", text, "a5a506de67624ea9b09b1ebea7e547b4")
             .enqueue(object : Callback<NewsModel> {
                 override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
 
@@ -222,32 +98,16 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
+
     }
 
-    fun loadEntertainmentNews() {
 
-        var apiInterface = ApiClient.getApiClient().create(ApiInterface::class.java)
-        apiInterface.getData("in", "entertainment", "a5a506de67624ea9b09b1ebea7e547b4")
-            .enqueue(object : Callback<NewsModel> {
-                override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
 
-                    var data = response.body()
 
-//                Log.e(TAG, "onResponse: ========" + data )
 
-                    binding.recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-                    binding.recycler.adapter =
-                        NewsAdapter(data?.articles as ArrayList<ArticlesItem>)
-                }
 
-                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
 
-                    Log.e(TAG, "onFailure: ===" + t.message)
-                }
 
-            })
-    }
+
 
 }
-
-

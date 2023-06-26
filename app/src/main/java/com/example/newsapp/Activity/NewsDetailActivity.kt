@@ -21,7 +21,7 @@ class NewsDetailActivity : AppCompatActivity() {
         var title = intent.getStringExtra("title")
         var url = intent.getStringExtra("link")
 
-//        Log.e(TAG, "onCreate: ===" +content + img )
+        Log.e(TAG, "onCreate: ===" +content )
 //        var data = MainActivity.data
 //
         binding.descNd.setText(content.toString())
@@ -36,7 +36,5 @@ class NewsDetailActivity : AppCompatActivity() {
         }
 
         Glide.with(this).load(img).into(binding.imgNd)
-
-
     }
 }

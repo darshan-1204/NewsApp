@@ -16,14 +16,6 @@
         android:gravity="center"
         app:titleTextColor="#FFFF00"/>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:id="@+id/rcvCat"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        tools:listitem="@layout/categories_item" />-->
-
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -37,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
+                android:backgroundTint="#424242"
                 app:cardUseCompatPadding="true">
 
 
@@ -54,6 +47,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
+                android:backgroundTint="#424242"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
@@ -74,6 +68,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
+                android:backgroundTint="#424242"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
@@ -95,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:backgroundTint="#424242"
                 app:cardCornerRadius="20dp"
                 app:cardUseCompatPadding="true">
 
@@ -113,6 +109,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#424242"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
                 app:cardUseCompatPadding="true">
@@ -130,6 +127,7 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:backgroundTint="#424242"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -149,6 +147,7 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:backgroundTint="#424242"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
