@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.newsapp.Activity.NewsDetailActivity
-import com.example.newsapp.ArticlesItem
+import com.example.newsapp.ModelClass.ArticlesItem
 import com.example.newsapp.R
 
 class NewsAdapter(data: ArrayList<ArticlesItem>) : Adapter<NewsAdapter.NewsHolder>() {
@@ -19,6 +19,7 @@ class NewsAdapter(data: ArrayList<ArticlesItem>) : Adapter<NewsAdapter.NewsHolde
     class NewsHolder(itemView: View) : ViewHolder(itemView){
         var txt = itemView.findViewById<TextView>(R.id.rcvText)
         var img = itemView.findViewById<ImageView>(R.id.rcvImg)
+        var source = itemView.findViewById<TextView>(R.id.rcvSource)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsHolder {
@@ -31,16 +32,21 @@ class NewsAdapter(data: ArrayList<ArticlesItem>) : Adapter<NewsAdapter.NewsHolde
     }
 
     override fun onBindViewHolder(holder: NewsHolder, position: Int) {
-        holder.txt.setText(data?.get(position)?.title)
+
+
+        holder.txt.text = data?.get(position)?.title
+//        holder.date.text = originalDate
+        holder.source.text = data[position].source?.name.toString()
+
         Glide.with(holder.itemView.context).load(data?.get(position)?.urlToImage).into(holder.img)
 
         holder.itemView.setOnClickListener {
 
             var intent = Intent(holder.itemView.context,NewsDetailActivity::class.java)
-            intent.putExtra("content",data.get(position).description)
-            intent.putExtra("title",data.get(position).title)
-            intent.putExtra("img",data.get(position).urlToImage)
-            intent.putExtra("link",data.get(position).url)
+            intent.putExtra("content", data[position].description)
+            intent.putExtra("title", data[position].title)
+            intent.putExtra("img", data[position].urlToImage)
+            intent.putExtra("link", data[position].url)
             holder.itemView.context.startActivity(intent)
         }
     }

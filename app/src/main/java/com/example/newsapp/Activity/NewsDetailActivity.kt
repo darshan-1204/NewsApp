@@ -24,8 +24,8 @@ class NewsDetailActivity : AppCompatActivity() {
         Log.e(TAG, "onCreate: ===" +content )
 //        var data = MainActivity.data
 //
-        binding.descNd.setText(content.toString())
-        binding.title.setText(title.toString())
+        binding.descNd.text = content.toString()
+        binding.title.text = title.toString()
 
 
         binding.btnUrl.setOnClickListener {
@@ -33,6 +33,10 @@ class NewsDetailActivity : AppCompatActivity() {
             var intent = Intent(Intent.ACTION_VIEW)
             intent.setData(Uri.parse(url))
             startActivity(intent)
+        }
+
+        binding.backNewsActivity.setOnClickListener {
+            finish()
         }
 
         Glide.with(this).load(img).into(binding.imgNd)

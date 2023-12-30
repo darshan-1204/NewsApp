@@ -1,39 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="5dp"
-    app:cardUseCompatPadding="true"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
     app:cardCornerRadius="10dp"
-    android:layout_marginBottom="5dp">
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary_dark"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:id="@+id/rcvImg"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/rcvText"
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content"
-            android:textSize="17dp"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:padding="5dp"
-            android:text="News is Not here !!"
-            android:layout_margin="10dp"
-            android:textColor="#f2f2f2"
-            android:layout_marginTop="5dp"/>
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/rcvImg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Remaining code for text and date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rcvText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                style="@style/TextStyle"
+                android:padding="5dp"
+                android:text="News is Not here !!"
+                android:textSize="17dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/rcvSource"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_gravity="right"
+                android:layout_height="wrap_content"
+                android:text="Source"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14dp"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
